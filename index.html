@@ -6,11 +6,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
-    <title>Azerty</title>
+    <title>AzerType</title>
 </head>
 
 <body>
-    <script src="./js/script.js"></script>
+    <header>
+        <h1>AzerType</h1>
+        Welcome! So, you're here for the training ?
+        Brace yourself,...
+        <div id="line"></div>
+    </header>
+    <div id="container">
+        <div>Choisissez votre option et tapez la proposition
+            qui s'affiche en dessous:
+        </div>
+        <div id="zone-choix">
+            <div class="item">
+                <label for="mots">Mots</label>
+                <input type="radio" id="mots" value="mots" name="choix">
+            </div>
+            <div class="item">
+                <label for="phrase">Phrase</label>
+                <input type="radio" id="phrase" value="phrase" name="choix">
+            </div>
+        </div>
+        <div id="zone-de-saisie">
+            <div id="mot-a-entrer">LKM</div>
+            <div id="saisie">
+                <input type="text">
+                <button>Valider</button>
+            </div>
+        </div>
+        <div id="score">
+            <p>Votre score: 0 / 0</p>
+            <button>Partager</button>
+        </div>
+    </div>
+    <footer>
+        "Keep hardwork, prove yourself, and... Be yourself"
+    </footer>
+    <script src="./scripts/script.js"></script>
 </body>
 
 </html>
