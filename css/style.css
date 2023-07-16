@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Ubuntu";
-    src: url("./fonts/ubuntu.ttf");
+    src: url("../fonts/ubuntu.ttf");
 }
 
 body {
@@ -40,7 +40,10 @@ header {
 }
 
 #zone-choix {
-    color: white;
+    color: black;
+    background-color: white;
+    border-radius: 0.3rem;
+    border: none;
     display: flex;
     gap: 4rem;
     width: 25%;
@@ -88,6 +91,10 @@ header {
     border: none;
     font-size: large;
     font-weight: bold;
+}
+
+#saisie input:focus {
+    outline: none;
 }
 
 #saisie button {

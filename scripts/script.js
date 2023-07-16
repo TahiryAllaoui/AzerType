@@ -1,28 +1,42 @@
-// const listeMots = ["Maman", "Famille", "interlocution"];
-// const listePhrase = ["Annie, are you OK?", "Smooth criminal is hitting", "Mickel Jackson is a Pop Star"];
-// let choixDeJeu = prompt("Voulez-vous jouer avec des mots out des phrase, (0) pour Mots et (1) pour Phrase: ");
-// let score = 0;
+const listeMots = ["Maman", "Famille", "interlocution"];
+const listePhrase = ["Annie, are you OK?", "Smooth criminal is hitting", "Mickel Jackson is a Pop Star"];
+let currentList = listeMots;
+let score = 0;
+let currentIndex = 0;
+let selectedOption = document.querySelector("#zone-choix");
+selectedOption.value = "mots"
+
+let keyword = document.querySelector("#mot-a-entrer");
+let userInput = document.querySelector("#user-input");
+let validateButton = document.querySelector("#validate-button");
+keyword.textContent = currentList[currentIndex];
+let paragraphScore = document.createElement("p");
+let divScore = document.getElementById("score");
+divScore.appendChild(paragraphScore);
 
 
-// //functions
-// const modeDeJeu = (choix) => {
-//     return (choix === 0) ? listeMots : listePhrase;
-// }
+selectedOption.addEventListener("change", (e) => {
+    console.log(e.target);
+    currentList = (e.target.value === "mots") ? listeMots : listePhrase;
+    keyword.textContent = currentList[currentIndex];
+})
 
-// const jeu = (liste) => {
-//     for (let i = 0; i < liste.length; i++) {
-//         let motUtilisateur = prompt(`Entrer: ${liste[i]}`);
-//         if (liste[i] === motUtilisateur) {
-//             score++;
-//         }
-//         else {
-//             i--;
-//         }
-//     }
-//     return score;
-// }
+validateButton.addEventListener("click", () => {
+    if (currentList[currentIndex] === userInput.value)
+        score++;
+    currentIndex++;
+    keyword.textContent = currentList[currentIndex];
+    paragraphScore.textContent = `Votre score: ${score} / ${currentList.length}`;
+})
 
-// //test
-// let partie = jeu(modeDeJeu(parseInt(choixDeJeu)));
-
-// console.log(" votre score est: ", score);
+document.addEventListener("keypress", (e) => {
+    let type = e.key;
+    if (type == "Enter") {
+        if (currentList[currentIndex] === userInput.value)
+            score++;
+        currentIndex++;
+        keyword.textContent = currentList[currentIndex];
+        paragraphScore.textContent = `Votre score: ${score} / ${currentList.length}`;
+        userInput.value = "";
+    }
+})

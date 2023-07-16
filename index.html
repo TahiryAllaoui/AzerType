@@ -15,32 +15,25 @@
         Bienvenu sur AzerType, le dactylo en ligne
     </header>
     <div id="container">
-        <div>Choisissez votre option et tapez la proposition
+        <div style="text-align: center;">Choisissez votre option et tapez la proposition
             qui s'affiche en dessous:
         </div>
-        <div id="zone-choix">
-            <div class="item">
-                <label for="mots">Mots</label>
-                <input type="radio" id="mots" value="mots" name="choix">
-            </div>
-            <div class="item">
-                <label for="phrase">Phrase</label>
-                <input type="radio" id="phrase" value="phrase" name="choix">
-            </div>
-        </div>
+        <select name="" id="zone-choix">
+            <option value="mots" selected="selected">Mots</option>
+            <option value="phrases">Phrases</option>
+        </select>
         <div id="zone-de-saisie">
-            <div id="mot-a-entrer">LKM</div>
+            <div id="mot-a-entrer"></div>
             <div id="saisie">
-                <input type="text">
-                <button>Valider</button>
+                <input type="text" id="user-input">
+                <button id="validate-button">Valider</button>
             </div>
         </div>
         <div id="score">
-            <p>Votre score: 0 / 0</p>
             <button>Partager</button>
         </div>
     </div>
-    <footer>
+    <footer class="pied">
         "Keep hardwork, prove yourself, and... Be yourself"
     </footer>
     <script src="./scripts/script.js"></script>
